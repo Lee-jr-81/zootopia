@@ -1,12 +1,15 @@
+"use client";
+
 import React from "react";
 import Header from "./_components/Header";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function Provider({ children }) {
   return (
-    <div>
+    <ChakraProvider>
       <Header />
       {children}
-    </div>
+    </ChakraProvider>
   );
 }
 
