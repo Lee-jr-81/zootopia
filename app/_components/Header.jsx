@@ -9,7 +9,12 @@ import {
 import Image from "next/image";
 import React from "react";
 import { Camera, CameraIcon, CircleUserRound, Pointer } from "lucide-react";
-import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
+import {
+  Avatar,
+  AvatarBadge,
+  AvatarGroup,
+  extendTheme,
+} from "@chakra-ui/react";
 
 function Header() {
   return (
@@ -31,7 +36,12 @@ function Header() {
         />
       </div>
       <div className="flex gap-4 items-center">
-        <Button colorScheme="orange" className="gap-2">
+        <Button
+          bg="brand.900"
+          color="white"
+          className="gap-2"
+          _hover={{ bg: "brand.700", cursor: "pointer" }}
+        >
           <AddIcon />
           Post ad
         </Button>
