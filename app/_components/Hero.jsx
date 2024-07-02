@@ -11,8 +11,8 @@ function Hero() {
             Find your friend
           </h1>
           <p className="mb-8 md:pl-0  pl-2 pr-2 leading-relaxed text-[#975f4e] dark:text-gray-300">
-            The UK's best pet classifieds website that looks to fund
-            conservation projects and pets in need.
+            The UKs best pet classifieds website that looks to fund conservation
+            projects and pets in need.
           </p>
           <div className="bg-[#652b19] p-2 rounded-xl w-1/2">
             <div className="mb-2">
@@ -32,10 +32,12 @@ function Hero() {
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full mb-5 md:mb-0 md:w-1/2 w-3/6">
-          <img
+          <Image
             className="object-cover object-center rounded"
             alt="hero"
             src="/petHero.png"
+            width={600}
+            height={600}
           />
         </div>
       </div>

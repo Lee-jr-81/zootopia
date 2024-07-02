@@ -1,8 +1,13 @@
-import { Inter } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Provider from "./Provider";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const roboto_mono = Roboto_Mono({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "Zootopia",
