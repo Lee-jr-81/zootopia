@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Select } from "@chakra-ui/react";
+import DemoClientComponent from "../components/demoClientComponent";
 
 function Hero() {
   return (
@@ -40,6 +41,7 @@ function Hero() {
             height={600}
           />
         </div>
+        <DemoClientComponent />
       </div>
     </section>
   );

@@ -15,6 +15,7 @@ import {
   AvatarGroup,
   extendTheme,
 } from "@chakra-ui/react";
+import { logout } from "../logout/actions";
 
 function Header() {
   return (
@@ -53,6 +54,9 @@ function Header() {
           _hover={{ color: "orange.700", cursor: "pointer" }}
         />
       </div>
+      <form action={logout}>
+        <button type="submit">Sign out</button>
+      </form>
     </div>
   );
 }
