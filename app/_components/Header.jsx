@@ -16,6 +16,7 @@ import {
   extendTheme,
 } from "@chakra-ui/react";
 import { logout } from "../logout/actions";
+import LoginButton from "./LoginButton";
 
 function Header() {
   return (
@@ -57,6 +58,7 @@ function Header() {
       <form action={logout}>
         <button type="submit">Sign out</button>
       </form>
+      <LoginButton />
     </div>
   );
 }
