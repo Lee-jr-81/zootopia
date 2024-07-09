@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Select } from "@chakra-ui/react";
-import DemoClientComponent from "../components/demoClientComponent";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 function Hero() {
   return (
@@ -41,7 +41,6 @@ function Hero() {
             height={600}
           />
         </div>
-        <DemoClientComponent />
       </div>
     </section>
   );

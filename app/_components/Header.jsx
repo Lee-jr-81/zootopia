@@ -7,7 +7,7 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { Camera, CameraIcon, CircleUserRound, Pointer } from "lucide-react";
 import {
   Avatar,
@@ -15,10 +15,18 @@ import {
   AvatarGroup,
   extendTheme,
 } from "@chakra-ui/react";
-import { logout } from "../logout/actions";
+
 import LoginButton from "./LoginButton";
+import { usePathname } from "next/navigation";
+import { UserButton, useUser } from "@clerk/nextjs";
 
 function Header() {
+  const path = usePathname();
+  const { user, isSignedIn } = useUser();
+
+  useEffect(() => {
+    console.log(path);
+  }, []);
   return (
     <div className="flex justify-between m-4 md:w-2/3 md:mx-auto items-center">
       <div>
@@ -47,18 +55,18 @@ function Header() {
           <AddIcon />
           Post ad
         </Button>
-        <IconButton
-          variant="unstyled"
-          aria-label="User profile image"
-          as={CircleUserRound}
-          color="orange.900"
-          _hover={{ color: "orange.700", cursor: "pointer" }}
-        />
+        {isSignedIn ? (
+          <UserButton />
+        ) : (
+          <IconButton
+            variant="unstyled"
+            aria-label="User profile image"
+            as={CircleUserRound}
+            color="orange.900"
+            _hover={{ color: "orange.700", cursor: "pointer" }}
+          />
+        )}
       </div>
-      <form action={logout}>
-        <button type="submit">Sign out</button>
-      </form>
-      <LoginButton />
     </div>
   );
 }
