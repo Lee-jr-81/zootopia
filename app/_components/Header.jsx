@@ -7,7 +7,7 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import { Camera, CameraIcon, CircleUserRound, Pointer } from "lucide-react";
 import {
   Avatar,
@@ -24,9 +24,6 @@ function Header() {
   const path = usePathname();
   const { user, isSignedIn } = useUser();
 
-  useEffect(() => {
-    console.log(path);
-  }, []);
   return (
     <div className="flex justify-between m-4 md:w-2/3 md:mx-auto items-center">
       <div>
