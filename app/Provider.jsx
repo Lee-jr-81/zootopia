@@ -16,7 +16,7 @@ function Provider({ children }) {
     <ChakraProvider theme={theme}>
       <Header />
 
-      {children}
+      <div>{children}</div>
     </ChakraProvider>
   );
 }

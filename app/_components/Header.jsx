@@ -18,6 +18,9 @@ import {
 
 import LoginButton from "./LoginButton";
 import { usePathname } from "next/navigation";
+
+import Link from "next/link";
+import { SupabaseClient } from "@supabase/supabase-js";
 import { UserButton, useUser } from "@clerk/nextjs";
 
 function Header() {
@@ -52,16 +55,19 @@ function Header() {
           <AddIcon />
           Post ad
         </Button>
+
         {isSignedIn ? (
           <UserButton />
         ) : (
-          <IconButton
-            variant="unstyled"
-            aria-label="User profile image"
-            as={CircleUserRound}
-            color="orange.900"
-            _hover={{ color: "orange.700", cursor: "pointer" }}
-          />
+          <Link href="/sign-in">
+            <IconButton
+              variant="unstyled"
+              aria-label="User profile image"
+              as={CircleUserRound}
+              color="orange.900"
+              _hover={{ color: "orange.700", cursor: "pointer" }}
+            />
+          </Link>
         )}
       </div>
     </div>
